@@ -1,0 +1,8 @@
+node{
+    stage('SCM Checkout'){
+        git 'https://github.com/manjula14/pipeline/new'
+    }
+    stage('Compile-Package'){
+        sh 'mvn install'
+    }
+}        
