@@ -3,6 +3,7 @@ node{
         git 'https://github.com/manjula14/pipeline/new'
     }
     stage('Compile-Package'){
-        sh 'mvn install'
+        def mvnHome = tool name: 'maven', type: 'maven'
+        sh "${mvnHome}/bin/mvn package"
     }
 }        
